@@ -7,6 +7,8 @@ A theme aimed at reading long texts avoiding distractions. This goal is achieved
   - The same can be said about graphical items as lines, they are only used in tables, code blocks —only when displaying line numbers— and <b>html</b> `<kbd>` tags.
 
 This overall scarcity of ornament gives Compact a someway sober or austere look, but it is a nice theme to keep your attention on long texts avoiding disturbances. It was designed to look like classical or vintage printed books.
+### Snapshoots
+
 ### Installation
 1. Download [this](https://github.com/FishionYu/typora-blubook-theme/releases/latest) zip from Github, extract it to get folder <i>compact</i> and file <i>compact.css</i>
 2. Open Typora, in <i>Preferences…</i>, click on <i>Apperance</i>, then on <i>Open Theme Folder</i>
