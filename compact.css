@@ -1,0 +1,1012 @@
+﻿/* Compact theme for typora */
+
+/* Copyright © 2020 mcesar-rlacruz */
+
+/* Fonts */
+
+@include-when-export url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,500;0,700;1,500;1,700&display=swap");
+
+@font-face {
+  font-family:          myserif;
+  font-style:           normal;
+  font-weight:          normal;
+  src:                  url("./compact/NotoSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family:          myserif;
+  font-style:           normal;
+  font-weight:          bold;
+  src:                  url("./compact/NotoSerif-Bold.ttf");
+}
+
+@font-face {
+  font-family:          myserif;
+  font-style:           italic;
+  font-weight:          normal;
+  src:                  url("./compact/NotoSerif-Italic.ttf");
+}
+
+@font-face {
+  font-family:          myserif;
+  font-style:           italic;
+  font-weight:          bold;
+  src:                  url("./compact/NotoSerif-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family:          mysans;
+  font-style:           normal;
+  font-weight:          normal;
+  src:                  url("./compact/NotoSans-Regular.ttf");
+}
+
+@font-face {
+  font-family:          mysans;
+  font-style:           normal;
+  font-weight:          bold;
+  src:                  url("./compact/NotoSans-Bold.ttf");
+}
+
+@font-face {
+  font-family:          mysans;
+  font-style:           italic;
+  font-weight:          normal;
+  src:                  url("./compact/NotoSans-Italic.ttf");
+}
+
+@font-face {
+  font-family:          mysans;
+  font-style:           italic;
+  font-weight:          bold;
+  src:                  url("./compact/NotoSans-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family:          mymono;
+  font-style:           normal;
+  font-weight:          normal;
+  src:                  url("./compact/SourceCodePro-Medium.ttf");
+}
+
+@font-face {
+  font-family:          mymono;
+  font-style:           normal;
+  font-weight:          bold;
+  src:                  url("./compact/SourceCodePro-Bold.ttf");
+}
+
+@font-face {
+  font-family:          mymono;
+  font-style:           italic;
+  font-weight:          normal;
+  src:                  url("./compact/SourceCodePro-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family:          mymono;
+  font-style:           italic;
+  font-weight:          bold;
+  src:                  url("./compact/SourceCodePro-BoldItalic.ttf");
+}
+
+:root {
+  --font-size:          12pt;
+  --small-font-size:    10pt;
+  --pitch:              16pt;
+  --small-caps-spacing: 0.083em;
+  --line-width:         1pt;
+  --bg-color:           hsl(49, 100%, 97.5%);
+  --text-color:         #100020;
+  --link-color:         #8070FF;
+  --hover-row-color:    hsl(49, 100%, 92.5%);
+  --hover-cell-color:   hsl(49, 100%, 82.5%);
+  --select-text-bg-color:   rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+  --active-file-bg-color:   rgba(32, 43, 51, 0.63);
+  --active-file-text-color: white;
+  --control-text-color:     #444;
+  --rawblock-edit-panel-bd: hsl(49, 100%, 92.5%);
+  --monospace:          mymono, "Source Code Pro", monospace;
+}
+
+/* Layout */
+
+@media screen {
+  #write {
+    padding:            var(--pitch);
+    margin:             0 auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 776pt) {
+  #write {
+    width:              calc(456pt + 2*var(--pitch));
+  }
+}
+
+@media screen and (max-width: 488pt) {
+  #write {
+    width:              100%;
+  }
+}
+
+@media print {
+  body.typora-export {
+    margin:             0;
+    padding:            0;
+  }
+  @page {
+    margin:             1in;
+  }
+}
+
+html, body {
+  font-family:          myserif, "Noto Serif", serif;
+  font-variant:         normal;
+  font-style:           normal;
+  font-weight:          normal;
+  text-align:           justify;
+  text-justify:         inter-word;
+  text-indent:          0;
+  line-stacking-strategy:
+                        grid-height;
+  word-wrap:            normal;
+  hyphens:              auto;
+  orphans:              2;
+  widows:               2;
+  font-size:            var(--font-size);
+}
+
+#write * {
+  line-height:          var(--pitch);
+}
+
+address, article, aside, blockquote, canvas, caption, dd, div, dl,
+dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6,
+header, hr, li, main, nav, noscript, ol, p, pre, section, table, tbody,
+thead, tfoot, ul, video, .md-toc, .md-math-block, .md-rawblock {
+  margin:               0;
+  border:               none;
+  padding:              0;
+}
+
+.md-fences {
+  margin:               var(--pitch) 0 var(--pitch) 0;
+  padding:              0 0 0 var(--pitch);
+}
+
+.code-tooltip {
+  border:               var(--line-width) solid var(--text-color);
+  border-radius:        0.4em;
+}
+
+.md-fences:hover {
+  background:           var(--hover-row-color);
+}
+
+.CodeMirror-gutters {
+  border-right:         var(--line-width) solid var(--text-color);
+}
+
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd,
+label, map, object, q, samp, script, small, span, strong, sub, sup,
+time, tt, var {
+  margin:               0;
+  border:               none;
+  padding:              0;
+}
+
+input, select, button, output, textarea {
+  margin:               0;
+  padding:              0;
+}
+
+/* Text styles */
+
+blockquote, caption, figcaption, figure, footer, header, hr, p,
+pre, table, tbody, thead, tfoot, .md-math-block {
+  font-family:          myserif, "Noto Serif", serif;
+  font-variant:         normal;
+  font-style:           normal;
+  font-weight:          normal;
+}
+
+blockquote {
+  margin-top:           var(--pitch);
+  margin-bottom:        var(--pitch);
+  margin-left:          calc(2 * var(--pitch));
+  quotes:               none;
+}
+
+blockquote:before, blockquote:after {
+  content:              none;
+}
+
+q:before {
+  content:               "«";
+}
+q:after {
+  content:               "»";
+}
+q q:before {
+  content:               "“";
+}
+q q:after {
+  content:               "”";
+}
+q q q:before {
+  content:               "‘";
+}
+q q q:after {
+  content:               "’";
+}
+
+p {
+  text-indent:          var(--pitch);
+}
+
+blockquote p:first-child {
+  text-indent:          0;
+}
+
+a, abbr, b, cite, code, dfn, em, i, kbd, q, samp, strong, sub, sup, var {
+  font-size:            inherit;
+  font-family:          inherit;  /* serif, sans-serif, mono */
+  font-variant:         inherit;  /* normal, small-caps */
+  font-style:           inherit;  /* normal, italic, oblique */
+  font-weight:          inherit;  /* normal, bold */
+
+}
+
+a {
+  text-decoration:      none;
+  color:                var(--link-color);
+}
+
+a:hover, a:active {
+  text-decoration:      underline;
+}
+
+abbr {
+  font-variant:         small-caps;
+  letter-spacing:       var(--small-caps-spacing);
+  text-transform:       lowercase;
+  text-decoration:      none;
+  hyphens:              none;
+  font-size:            109%;
+  line-height:          0;
+}
+
+cite, dfn, em {
+  hyphens:              none;
+  font-style:           italic;
+}
+
+i {
+  font-family:          mysans, "Noto Sans", sans-serif;
+  hyphens:              none;
+}
+
+tt i, samp i, code i, pre i, kbd i, .md-fences i {
+  font-family:          inherit;
+  font-style:           italic;
+}
+
+strong {
+  font-weight:          bold;
+}
+
+b {
+  font-variant:         small-caps;
+  letter-spacing:       var(--small-caps-spacing);
+  hyphens:              none;
+  font-size:            109%;
+  line-height:          0;
+}
+
+tt b, samp b, code b, pre b, kbd b, .md-fences b {
+  font-variant:         inherit;
+  letter-spacing:       inherit;
+  font-weight:          bold;
+}
+
+em, dfn, cite {
+  hyphens:              none;
+  font-style:           italic;
+}
+
+em em, em dfn, dfn em, em cite, cite em {
+  hyphens:              none;
+  font-style:           normal;
+}
+
+pre, .md-fences {
+  white-space:          pre;
+  orphans:              1;
+  widows:               1;
+}
+
+tt, code, kbd, pre, samp, .md-fences {
+  font-family:          mymono, "Source Code Pro", monospace;
+  font-size:            111.7%;
+  hyphens:              none;
+  white-space:          pre-wrap;
+}
+
+tt, code, kbd, samp {
+  line-height:          0;
+}
+
+kbd {
+  font-weight:          normal;
+  font-variant:         normal;
+  font-style:           normal;
+  margin:               0       0.05em  0       0.05em;
+  padding:              0.05em  0.2em   0.05em  0.2em;
+  border-radius:        0.2em;
+  border:               0.05em solid var(--text-color);
+  white-space:          nowrap;
+  hyphens:              none;
+  box-shadow:           none;
+}
+
+@media screen {
+  kbd {
+    background-color:   var(--bg-color);
+  }
+}
+
+@media screen {
+  hr {
+    display:            block;
+    width:              38.2%;
+    margin:             var(--pitch) auto var(--pitch) auto;
+    border:             var(--line-width) solid var(--text-color);
+  }
+}
+
+@media print {
+  hr {
+    visibility:         none;
+    page-break-after:   always;
+  }
+}
+
+sup, sub {
+  font-size:            70.7%;
+  vertical-align:       baseline;
+  position:             relative;
+  hyphens:              none;
+}
+
+sup {
+  top:                  -1.1ex;
+}
+
+sub {
+  top:                  0.5ex;
+}
+
+var {
+  font-family:          myserif, "Noto Serif", serif;
+  font-variant:         normal;
+  font-style:           italic;
+  font-weight:          normal;
+  hyphens:              none;
+}
+
+var sup, i sup, em sup, dfn sup, cite sup {
+  padding-left:         0.15em;
+}
+
+/* decorators */
+
+mark {
+  hyphens:              none;
+  color:                #FF0000;
+  background:           inherit;
+}
+
+@media screen {
+  s, del {
+    text-decoration:    line-through;
+  }
+
+  ins {
+    text-decoration:    underline;
+  }
+}
+
+@media print {
+  s, del {
+    display:            none;
+  }
+
+  ins {
+    text-decoration:    none;
+  }
+}
+
+u {
+  text-decoration:      underline;
+}
+
+/* headings */
+
+h1, h2, h3, h4, h5, h6 {
+  font-size:            var(--font-size);
+  font-family:          myserif, "Noto Serif", serif;
+  font-variant:         normal;
+  font-style:           normal;
+  font-weight:          normal;
+  text-align:           left;
+  text-indent:          0;
+  hyphens:              none;
+  page-break-after:     avoid;
+  page-break-inside:    avoid;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  text-indent:          0;
+}
+
+h1 {
+  margin-top:           calc(3 * var(--pitch));
+  margin-bottom:        var(--pitch);
+  font-variant:         small-caps;
+  letter-spacing:       var(--small-caps-spacing);
+  font-weight:          bold;
+}
+
+h2 {
+  margin-top:           calc(2 * var(--pitch));
+  margin-bottom:        var(--pitch);
+  margin-left:          var(--pitch);
+  font-variant:         normal;
+  font-weight:          bold;
+}
+
+h3 {
+  margin-top:           var(--pitch);
+  margin-bottom:        var(--pitch);
+  margin-left:          calc(2 * var(--pitch));
+  font-variant:         small-caps;
+  letter-spacing:       var(--small-caps-spacing);
+  font-weight:          normal;
+}
+
+h4 {
+  margin-top:           var(--pitch);
+  margin-left:          calc(3 * var(--pitch));
+  font-style:           italic;
+  font-weight:          normal;
+}
+
+h5 {
+  margin-left:          calc(2 * var(--pitch));
+  font-variant:         small-caps;
+  letter-spacing:       var(--small-caps-spacing);
+}
+
+h5::before {
+  content:              "§";
+}
+
+h6 {
+  margin-left:          var(--pitch);
+  font-style:           italic;
+  font-variant:         normal;
+}
+
+h6::before {
+  content:              "¶";
+}
+
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6,
+#write p, #write pre {
+  width:                100%;
+}
+
+.ty-preferences h1, .ty-preferences h2, .ty-preferences h3,
+.ty-preferences h4, .ty-preferences h5, .ty-preferences h6 {
+  margin-left:          0;
+}
+
+.ty-preferences h5::before, .ty-preferences h6::before {
+  content:              none;
+}
+
+/* lists */
+
+dd, dl, dt, li, ol, ul {
+  font-size:            inherit;
+  font-family:          inherit;
+  font-variant:         inherit;
+  font-style:           inherit;
+  font-weight:          inherit;
+}
+
+ul, ol {
+  list-style-position:  outside;
+  margin-left:          calc(2 * var(--pitch));
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-left:          var(--pitch);
+}
+
+ul ul ul ul, ul ul ol ul, ul ol ul ul, ul ol ol ul,
+ol ul ul ul, ol ul ol ul, ol ol ul ul, ol ol ol ul,
+ul ul ul ol, ul ul ol ol, ul ol ul ol, ul ol ol ol,
+ol ul ul ol, ol ul ol ol, ol ol ul ol, ol ol ol ol {
+  text-align:           left;
+}
+
+li p {
+  margin:               0;
+}
+
+li {
+  display:              list-item;
+  margin-top:           0;
+  margin-bottom:        0;
+}
+
+ul>li {
+  list-style-type:      square;
+}
+
+ul ul>li {
+  list-style-type:      disc;
+}
+
+ul ul ul>li {
+  list-style-type:      circle;
+}
+
+ul ul ul ul>li {
+  list-style-type:      square;
+}
+
+ul ul ul ul ul>li {
+  list-style-type:      disc;
+}
+
+ul ul ul ul ul ul>li {
+  list-style-type:      circle;
+}
+
+ol>li {
+  list-style-type:      decimal;
+}
+
+ol ol>li {
+  list-style-type:      lower-alpha;
+}
+
+ol ol ol>li {
+  list-style-type:      upper-roman;
+}
+
+ol ol ol ol>li {
+  list-style-type:      lower-greek;
+}
+
+ol ol ol ol ol>li {
+  list-style-type:      decimal-leading-zero;
+}
+
+dl {
+  margin-left:          var(--pitch);
+}
+
+dt {
+  float:                left;
+  clear:                left;
+  text-align:           left;
+}
+
+dt::after {
+  content:              ":\00A0";  /* &nbsp; */
+}
+
+dd {
+  margin-left:          calc(3 * var(--pitch));
+}
+
+li>p:first-child, dd>p:first-child, li>input+p {
+  text-indent:          0;
+}
+
+.md-task-list-item>input:before {
+  content:              "\221A";  /* tick */
+  display:              inline-block;
+  width:                1.25rem;
+  height:               1.6rem;
+  vertical-align:       middle;
+  text-align:           center;
+  color:                #ddd;
+  background-color:     var(--bg-color);
+}
+
+@media print {
+  .md-task-list-item>input:before {
+    background-color:   white;
+  }
+}
+
+.md-task-list-item>input:checked:before,
+.md-task-list-item>input[checked]:before {
+  color:                inherit;
+}
+
+/* Mathjax */
+
+.md-inline-math {
+  display:              inline;
+}
+
+/* tables */
+
+figure {
+  margin-top:           var(--pitch);
+  margin-bottom:        var(--pitch);
+}
+
+table {
+  margin:               0 auto 0 auto;
+  padding:              0;
+  border:               none;
+  border-collapse:      collapse;
+  border-spacing:       0;
+  line-stacking-strategy:
+                        grid-height;
+  caption-side:         top;
+}
+
+th {
+  font-weight:          inherit;
+}
+
+th, td {
+  padding:              0 calc(var(--pitch)/4) 0 calc(var(--pitch)/4);
+}
+
+tr:hover {
+  background:           var(--hover-row-color);
+}
+
+th:hover, td:hover {
+  background:           var(--hover-cell-color);
+}
+
+thead {
+  border-bottom:        var(--line-width) solid var(--text-color);
+}
+
+tfoot {
+  border-top:           var(--line-width) solid var(--text-color);
+}
+
+/* footnotes */
+
+sup.md-footnote {
+    padding:            0;
+    background-color:   var(--bg-color);
+    color:              var(--text-color);
+    cursor:             pointer;
+}
+
+.footnotes {
+  margin-top:           var(--pitch);
+  margin-bottom:        var(--pitch);
+  opacity:              1;
+  font-size:            var(--small-font-size);
+}
+
+/* toc */
+
+.md-toc {
+  font-size:            var(--font-size);
+}
+
+.md-toc-content {
+  margin:               0;
+  padding:              0;
+  text-indent:          0;
+}
+
+.md-toc-item {
+  color:                var(--link-color);
+}
+
+.md-toc-h1 {
+  font-variant:         small-caps;
+  letter-spacing:       var(--small-caps-spacing);
+  font-weight:          bold;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left:          var(--pitch);
+}
+
+.md-toc-h2 {
+  font-variant:         normal;
+  font-weight:          bold;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left:          calc(2 * var(--pitch));
+}
+
+.md-toc-h3 {
+  font-variant:         small-caps;
+  letter-spacing:       var(--small-caps-spacing);
+  font-weight:          normal;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left:          calc(3 * var(--pitch));
+}
+
+.md-toc-h4 {
+  font-style:           italic;
+  font-weight:          normal;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left:          calc(4 * var(--pitch));
+}
+
+.md-toc-h5 {
+  font-variant:         small-caps;
+  letter-spacing:       var(--small-caps-spacing);
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left:          calc(5 * var(--pitch));
+}
+
+.md-toc-h5 .md-toc-inner::before {
+  content:              "§";
+}
+
+.md-toc-h6 {
+  font-style:           italic;
+  font-variant:         normal;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left:          calc(6 * var(--pitch));
+}
+
+.md-toc-h6 .md-toc-inner::before {
+  content:              "¶";
+}
+
+/* stuff directly from the Newsprint theme */
+
+.md-meta, .md-before, .md-after {
+  color:#999;
+}
+
+.ty-table-edit {
+  background-color: transparent;
+}
+
+.md-image>.md-meta {
+  color: #9B5146;
+}
+
+.md-image>.md-meta {
+  font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", serif;
+}
+
+#write pre.md-meta-block {
+  min-height: 1.875rem;
+  color: #555;
+  border: 0px;
+  background: transparent;
+  margin-top: -4px;
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
+#typora-sidebar {
+  background-color: #f3f2ee;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+  background: inherit;
+  box-shadow: none;
+  border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+  border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+    border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+  background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+  list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+  background: #f3f2ee;
+  color: #1f0909;
+}
+
+.megamenu-menu-header {
+  border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+  box-shadow: none;
+  border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+  font-family: myserif, "Noto Serif", serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+  color: #1f0909;
+  border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+  color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+  color: inherit;
+  background-color: #e8e7df;
+}
+
+.long-btn:hover {
+  background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+  background-color: #D2D1D1;
+}
+
+.btn-default {
+  background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+  background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+  margin-top: 8px;
+}
+
+.file-list-item-file-name {
+  font-weight: initial;
+}
+
+.file-list-item-summary {
+  opacity: 1;
+}
+
+.file-list-item {
+  color: #777;
+}
+
+.file-list-item.active {
+  background-color: inherit;
+  color: black;
+}
+
+.ty-side-sort-btn.active {
+  background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+  font-weight: bold;
+}
+
+.file-list-item {
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background {
+  background-color: rgba(32, 43, 51, 0.63);
+  background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content {
+  color: white;
+  color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+  margin-left: -1.7em;
+  margin-top: calc(1rem - 12px);
+}
+
+input {
+  border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover,
+.megamenu-menu-header:focus {
+  color: inherit;
+}
+
+.dropdown-menu .divider {
+  border-color: #e5e5e5;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+  font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+  background: transparent;
+}
+
+.ty-preferences .window-header {
+  border-bottom: 1px dashed #202B33;
+  box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+  color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+  background: #777;
+  color: white;
+}
