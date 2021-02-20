@@ -33,7 +33,7 @@ This overall scarcity of ornament gives Compact a someway sober or austere look,
 ![](Snapshoots/6_Text.PNG)
 
 ### Installation
-1. Download [this](https://github.com/mcesar-rlacruz/typora-compact/releases/latest) zip from Github, extract it to get folder <i>compact</i> and file <i>compact.css</i>
+1. Download the zip file of the latest release from [GitHub](https://github.com/mcesar-rlacruz/typora-compact/releases/latest), extract it to get folder <i>compact</i> and file <i>compact.css</i>
 2. Open Typora, in <i>Preferences…</i>, click on <i>Apperance</i>, then on <i>Open Theme Folder</i>
 3. Put <i>compact</i> folder and <i>compact.css</i> file into the open folder
 4. Select the Compact theme from the <i>Themes</i> menu
