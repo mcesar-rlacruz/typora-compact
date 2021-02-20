@@ -8,6 +8,7 @@ A theme aimed at reading long texts avoiding distractions. This goal is achieved
 
 This overall scarcity of ornament gives Compact a someway sober or austere look, but it is a nice theme to keep your attention on long texts avoiding disturbances. It was designed to look like classical or vintage printed books.
 ### Snapshoots
+![](Snapshoots/1_What.PNG)
 
 ### Installation
 1. Download [this](https://github.com/FishionYu/typora-blubook-theme/releases/latest) zip from Github, extract it to get folder <i>compact</i> and file <i>compact.css</i>
