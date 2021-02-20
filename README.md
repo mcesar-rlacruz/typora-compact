@@ -18,7 +18,7 @@ This overall scarcity of ornament gives Compact a someway sober or austere look,
 
 #### Code blocks and quotations.
 
-![](Snapshoots/3_Code_1.PNG)
+![](Snapshoots/3_Code_q.PNG)
 
 #### Headings.
 
