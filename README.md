@@ -21,7 +21,7 @@ Headings.
 ![](Snapshoots/4_headings.PNG)
 
 Tables, footnotes, inlined HTML and fonts.
-![](Snapshoots/5_Tables_fn_html_f.PNG)
+![](Snapshoots/5_Tables_fn_html_f2.PNG)
 
 Paragrapshs.
 ![](Snapshoots/6_Text.PNG)
