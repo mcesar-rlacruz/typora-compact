@@ -33,9 +33,11 @@ This overall scarcity of ornament gives Compact a someway sober or austere look,
 ![](Snapshoots/6_Text.PNG)
 
 ### Installation
-1. Download [this](https://github.com/FishionYu/typora-blubook-theme/releases/latest) zip from Github, extract it to get folder <i>compact</i> and file <i>compact.css</i>
+1. Download [this](https://github.com/mcesar-rlacruz/typora-compact/releases/latest) zip from Github, extract it to get folder <i>compact</i> and file <i>compact.css</i>
 2. Open Typora, in <i>Preferences…</i>, click on <i>Apperance</i>, then on <i>Open Theme Folder</i>
 3. Put <i>compact</i> folder and <i>compact.css</i> file into the open folder
 4. Select the Compact theme from the <i>Themes</i> menu
 
 Compact was designed upon Windows 10, and is tested neither on macOS nor Linux.
+
+The thumbnail for this theme was based on that from the [Vintage](https://github.com/tristone13th/typora-vintage-theme) theme.
