@@ -1,6 +1,25 @@
-﻿/* Compact theme for typora */
+/* Compact theme for typora */
 
 /* Copyright © 2020 mcesar-rlacruz */
+
+/* adjust these sizes to fit your needs */
+
+:root {
+  --text-width:         452pt;
+}
+
+/* recommended vertical page margins are:
+  A4:     101.2pt
+  letter: 103.5pt
+  legal:  131.7pt
+*/
+@media print {
+  @page {
+    size:               A4 portrait;
+    margin-top:         101.2pt;
+    margin-bottom:      101.2pt;
+  }  
+}
 
 /* Fonts */
 
@@ -127,8 +146,8 @@
   --sc-correction:      100%;
   --line-width:         1pt;
   --bg-color:           hsl(49, 100%, 97.5%);
-  --text-color:         #100020;
-  --link-color:         #8070FF;
+  --text-color:         hsl(270, 100%, 6.5%);
+  --link-color:         hsl(247, 100%, 72%);
   --hover-row-color:    hsl(49, 100%, 92.5%);
   --hover-cell-color:   hsl(49, 100%, 82.5%);
   --select-text-bg-color:   rgba(32, 43, 51, 0.63);
@@ -138,6 +157,7 @@
   --control-text-color:     #444;
   --rawblock-edit-panel-bd: hsl(49, 100%, 92.5%);
   --monospace:          mymono, "Source Code Pro", monospace;
+  --heading-char-color:     hsl(270, 100%, 52%);
 }
 
 /* Layout */
@@ -149,26 +169,32 @@
   }
 }
 
-@media screen and (max-width: 776pt) {
+@media screen and (max-width: 740pt) {
   #write {
-    width:              calc(456pt + 2*var(--pitch));
+    width:              calc(var(--text-width) + 2*var(--pitch));
   }
 }
 
-@media screen and (max-width: 488pt) {
+@media screen and (max-width: 484pt) {
   #write {
     width:              100%;
   }
 }
 
 @media print {
-  body.typora-export {
-    margin:             0;
+  #write {
     padding:            0;
-  }
+    width:              var(--text-width);
+  }  
   @page {
-    margin:             1in;
+    padding:            0;
+    margin-left:        auto;
+    margin-right:       auto;
   }
+}
+
+#write * {
+  line-height:          var(--pitch);
 }
 
 html, body {
@@ -188,14 +214,11 @@ html, body {
   font-size:            var(--font-size);
 }
 
-#write * {
-  line-height:          var(--pitch);
-}
-
 address, article, aside, blockquote, canvas, caption, dd, div, dl,
 dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6,
 header, hr, li, main, nav, noscript, ol, p, pre, section, table, tbody,
-thead, tfoot, ul, video, .md-toc, .md-math-block, .md-rawblock {
+thead, tfoot, ul, video, .md-toc, .md-math-block, .md-rawblock,
+body.typora-export {
   margin:               0;
   border:               none;
   padding:              0;
@@ -731,6 +754,13 @@ tfoot {
 }
 
 /* footnotes */
+
+.footnotes-area {
+  font-size:            var(--small-font-size);
+  margin-top:           var(--pitch);
+  padding:              0;
+  color:                var(--text-color);
+}
 
 sup.md-footnote {
     padding:            0;
