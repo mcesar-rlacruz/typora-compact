@@ -28,7 +28,7 @@ This overall scarcity of ornament gives Compact a someway sober or austere look,
 
 ![](Snapshoots/5_Tables_fn_html_f3.PNG)
 
-#### Paragrapshs.
+#### Paragraphs.
 
 ![](Snapshoots/6_Text.PNG)
 
