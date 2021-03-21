@@ -18,7 +18,7 @@
     size:               A4 portrait;
     margin-top:         101.2pt;
     margin-bottom:      101.2pt;
-  }  
+  }
 }
 
 /* Fonts */
@@ -185,7 +185,7 @@
   #write {
     padding:            0;
     width:              var(--text-width);
-  }  
+  }
   @page {
     padding:            0;
     margin-left:        auto;
@@ -222,6 +222,13 @@ body.typora-export {
   margin:               0;
   border:               none;
   padding:              0;
+}
+
+address, article, aside, blockquote, canvas, caption, dd, dl, dt,
+fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6,
+header, hr, li, main, nav, noscript, ol, p, section, table, tbody,
+thead, tfoot, ul, video, .md-toc, .md-math-block, body.typora-export {
+  white-space:          normal !important;
 }
 
 .md-fences {
@@ -379,6 +386,10 @@ tt, code, kbd, pre, samp, .md-fences {
   font-family:          mymono, "Source Code Pro", monospace;
   font-size:            var(--mono-correction);
   hyphens:              none;
+  white-space:          pre-wrap;
+}
+
+.md-comment {
   white-space:          pre-wrap;
 }
 
