@@ -38,6 +38,6 @@ This overall scarcity of ornament gives Compact a someway sober or austere look,
 3. Put <i>compact</i> folder and <i>compact.css</i> file into the open folder
 4. Select the Compact theme from the <i>Themes</i> menu
 
-Compact was designed upon Windows 10. It has been tested in both macOS (Big Sur) and Linux (Ubuntu), working as expected.
+Compact was designed upon Windows 10. It has been tested in both macOS (Big Sur) and Linux (Ubuntu), working as expected (although exporting to PDF on macOS still shows some issues due to Safari/webkit not yetsupporting @page).
 
 The thumbnail for this theme was based on that from the [Vintage](https://github.com/tristone13th/typora-vintage-theme) theme.
