@@ -11,27 +11,27 @@ This overall scarcity of ornament gives Compact a someway sober or austere look,
 ### Snapshots
 #### The above text rendered with Compact.
 
-![](Snapshoots/1_What.PNG)
+![](Snapshots/1_What.PNG)
 
 #### Common markup and lists.
 
-![](Snapshoots/2_Common_lists.PNG)
+![](Snapshots/2_Common_lists.PNG)
 
 #### Code blocks and quotations.
 
-![](Snapshoots/3_Code_q.PNG)
+![](Snapshots/3_Code_q.PNG)
 
 #### Headings.
 
-![](Snapshoots/4_headings.PNG)
+![](Snapshots/4_headings.PNG)
 
 #### Tables, footnotes, inlined HTML and fonts.
 
-![](Snapshoots/5_Tables_fn_html_f3.PNG)
+![](Snapshots/5_Tables_fn_html_f3.PNG)
 
 #### Paragraphs.
 
-![](Snapshoots/6_Text.PNG)
+![](Snapshots/6_Text.PNG)
 
 ### Installation.
 
