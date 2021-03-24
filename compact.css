@@ -334,6 +334,9 @@ abbr, b {
   letter-spacing:       var(--small-caps-spacing);
   hyphens:              none;
   font-size:            var(--sc-correction);
+}
+
+#write abbr, #write b {
   line-height:          0;
 }
 
@@ -400,7 +403,7 @@ pre, .md-fences {
   widows:               1;
 }
 
-tt, code, kbd, samp {
+#write tt, #write code, #write kbd, #write samp {
   line-height:          0;
 }
 
@@ -774,10 +777,14 @@ tfoot {
 }
 
 sup.md-footnote {
-    padding:            0;
-    background-color:   var(--bg-color);
-    color:              var(--text-color);
-    cursor:             pointer;
+  padding:              0;
+  background-color:     var(--bg-color);
+  color:                var(--text-color);
+  cursor:               pointer;
+}
+
+#write sup.md-footnote * {
+  line-height:          0;
 }
 
 .footnotes {
